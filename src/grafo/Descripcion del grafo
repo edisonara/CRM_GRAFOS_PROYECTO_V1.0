@@ -1,0 +1,50 @@
+Clase Grafo:
+
+		Atributos:
+			private Map<Vertice, List<Arista>> listaDeAdyacencia
+		
+		Métodos:
+			public Grafo()
+			public void agregarVertice(Vertice vertice)
+				Parámetros: Vertice vertice
+			public void agregarArista(Vertice origen, Vertice destino, double peso)
+				Parámetros: Vertice origen, Vertice destino, double peso
+			public List<Arista> obtenerAristas(Vertice vertice)
+				Parámetros: Vertice vertice
+				Retorno: List<Arista>
+			public Set<Vertice> obtenerVertices()
+				Retorno: Set<Vertice>
+			public int obtenerComplejidadNotacionO()
+					La notación O (big O) es utilizada para describir el peor caso de la 
+					complejidad temporal de un algoritmo en términos de la cantidad de operaciones 
+					realizadas en función del tamaño de la entrada. En una implementación de un grafo 
+					como la que hemos estado utilizando, la complejidad de las operaciones depende en gran 
+					medida de cómo se implementa internamente la estructura de datos.
+			
+				Retorno: int
+Clase Vertice:
+
+		Atributos:
+			private Object dato
+		Métodos:
+			public Vertice(Object dato)
+				Parámetros: Object dato
+			public Object obtenerDato()
+				Retorno: Object
+		
+		
+Clase Arista:
+
+		Atributos:
+			private Vertice origen
+			private Vertice destino
+			private double peso
+		Métodos:
+			public Arista(Vertice origen, Vertice destino, double peso)
+				Parámetros: Vertice origen, Vertice destino, double peso
+			public Vertice obtenerOrigen()
+				Retorno: Vertice
+			public Vertice obtenerDestino()
+				Retorno: Vertice
+			public double obtenerPeso()
+				Retorno: double
