@@ -36,9 +36,4 @@ public class Grafo {
 
         return sum;
     }
-
-	public void eliminarArista(Arista arista) {
-		// TODO Auto-generated method stub
-		
-	}
 }

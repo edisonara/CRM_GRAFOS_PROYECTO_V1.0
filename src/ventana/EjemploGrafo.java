@@ -8,6 +8,22 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.scene.control.ChoiceDialog;
+
+import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+
+
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+
 
 public class EjemploGrafo extends Application {
 
@@ -16,19 +32,25 @@ public class EjemploGrafo extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+    
 
     @Override
     public void start(Stage primaryStage) {
         Vertice v1 = new Vertice("A");
         Vertice v2 = new Vertice("B");
-        Vertice v3 = new Vertice("C");
+       
 
         grafo.agregarVertice(v1);
         grafo.agregarVertice(v2);
-        grafo.agregarVertice(v3);
-
+        
+        
         grafo.agregarArista(v1, v2, 5.0);
-        grafo.agregarArista(v2, v3, 3.0);
+        
+        int complejidad = grafo.obtenerComplejidadNotacionO();
+        Label complejidadLabel = new Label("Complejidad O: " + complejidad);
+        complejidadLabel.setLayoutX(10);
+        complejidadLabel.setLayoutY(10);
+        
 
         Group root = new Group();
         Scene scene = new Scene(root, 800, 600, Color.LIGHTGRAY);
@@ -74,7 +96,14 @@ public class EjemploGrafo extends Application {
 
             angle -= angleStep;
         }
+        
+        String mensaje = "";
+        Alert dialog = new Alert(null);
+        dialog.setTitle("Eliminar Nodo");
+        dialog.setHeaderText(null);
+        dialog.setContentText("Complejidad O: " + complejidad);
 
+        root.getChildren().add(complejidadLabel);
         primaryStage.setTitle("Grafo Animado");
         primaryStage.setScene(scene);
         primaryStage.show();
